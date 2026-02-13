@@ -226,32 +226,35 @@ body {
     background: #0077b6;
     color: #fff;
 }
-
-.cp h3 {
-    font-size: 16px;
-    border-radius: 5px;
-    border: 2px solid #0077b6;
-    padding: 5px 10px;
-    color: #0077b6;
-}
-
-.cp-item:hover {
-    background-color: #0077b6;
-    /* dark blue on hover */
-    color: #fff;
-    border-left-color: #005f8b;
-    /* darker accent on left */
-}
-
+/* Base styles (desktop) */
 .cp-item {
     border-left: 4px solid #0077b6;
     border-radius: 8px;
     background-color: #f9f9f9;
     font-size: 14px;
-    height: 80px;
+    height: 80px; /* can be removed for auto-height */
     display: flex;
     flex-wrap: wrap;
+    align-items: center; /* vertically center content */
+    padding: 10px;       /* add some inner spacing */
+    box-sizing: border-box;
 }
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .cp-item {
+        flex-direction: column; /* stack content vertically */
+        height: auto;           /* let height adjust automatically */
+        font-size: 13px;        /* slightly smaller font */
+        padding: 8px;
+    }
+    
+    .cp h3 {
+        font-size: 14px;       /* scale down headings */
+        margin-bottom: 5px;    /* spacing for stacked layout */
+    }
+}
+
 
 .achievements-heading {
     font-size: 16px;
